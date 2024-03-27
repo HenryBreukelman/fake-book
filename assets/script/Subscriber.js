@@ -17,6 +17,10 @@ class User {
   get name() { return this.#name; }
   get userName() { return this.#userName; }
   get email() { return this.#email; }
+  
+  getInfo() {
+    return `${this.#name}, ${this.#userName}, ${this.#email}`;
+  }
 }
 
 export class Subscriber extends User {
@@ -34,4 +38,8 @@ export class Subscriber extends User {
   get pages() { return this.#pages; }
   get groups() { return this.#groups; }
   get canMonetize() { return this.#canMonetize; }
+
+  getInfo() {
+    return `${super.getInfo()}, ${this.#pages}, ${this.#groups}, ${this.#canMonetize}`
+  }
 }

@@ -85,6 +85,15 @@ nav ul li a:hover, .user i:hover {
   text-align: right;
 }
 
+/* dialog */
+
+dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 /*
   Content
 */
