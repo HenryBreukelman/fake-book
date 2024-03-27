@@ -33,6 +33,10 @@ ul {
   gap: 20px;
 }
 
+section {
+  margin-top: 30px;
+}
+
 /*
   Header
 */
@@ -59,16 +63,16 @@ nav ul li {
   list-style: none;
 }
 
-a, i {
+a, .header-box i {
   transition: all 0.25s ease-in-out;
   color: #fff;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 a {
   font-size: 18px;
   font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
 }
 
 nav ul li a:hover, .user i:hover {
@@ -85,4 +89,65 @@ nav ul li a:hover, .user i:hover {
   Content
 */
 
+/* form */
 
+form {
+  width: 600px;
+  background-color: rgba(255 255 255 / 0.05);
+  padding: 10px 15px;
+  color: #fff;
+  border-radius: 8px;
+}
+
+textarea {
+  color: #fff;
+  resize: none;
+  width: 100%;
+  height: 200px;
+  background-color: transparent;
+}
+
+.form-bottom {
+  position: relative;
+  display: flex;
+  height: 45px;
+}
+
+.image {
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.image i, .post {
+  transition: all 0.25s ease-in-out;
+}
+
+.image i {
+  font-size: 24px;
+}
+
+.image i:hover {
+  color: #3E9CF6;
+}
+
+.image-input {
+  display: none;
+}
+
+.post {
+  width: 80px;
+  height: 40px;
+  background: #3E9CF6;
+  color: #fff;
+  border-radius: 5px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.post:hover {
+  color: #3E9CF6;
+  background-color: #fff;
+}
