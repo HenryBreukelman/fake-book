@@ -7,24 +7,14 @@ const user = Utils.select('.user');
 const dialog = Utils.select('dialog');
 const text = Utils.select('textarea');
 const image = Utils.select('.image');
+const fileName = Utils.select('.file-name');
 const post = Utils.select('.post');
 
 let posts = []
 
-let pagesArray = [
-  'Me',
-  'Minecraft',
-  'Coding',
-  'Canada',
-  'Comedy'
-]
+let pagesArray = ['Me', 'Minecraft', 'Coding', 'Canada', 'Comedy'];
 
-let groupsArray = [
-  'Family',
-  'Class',
-  'Cousins',
-  'Church'
-]
+let groupsArray = ['Family', 'Class', 'Cousins', 'Church'];
 
 const newSubscriber = new Subscriber (
   '2956133', 
@@ -41,6 +31,7 @@ const newSubscriber = new Subscriber (
 */
 
 //dialog
+
 function dialogInfo() {
   let userInfo = newSubscriber.getInfo();
   let info = userInfo.split(', ');
@@ -95,9 +86,42 @@ function userInfoClose(event) {
   }
 }
 
+//image name
+
+function imageName(event) {
+  const file = event.target.files[0].name;
+  fileName.innerText = `${file}`;
+}
+
+//new post
+
+function makePost() {
+  let newPost = document.createElement('div');
+  let newText = text.value.trim();
+  let newFileName = fileName.innerText.trim();
+
+  if (newText === '' && newFileName === '') {
+    console.log('enasdgf')
+  } else {
+    clearInput()
+  }
+}
+
+function clearInput() {
+  text.value = 
+  image
+  fileName
+
+  text.value = '';
+  image.value = '';
+  fileName.innerText = '';
+}
+
 /*
   event listeners
 */
 
-Utils.listen('click', user, userInfoOpen)
-Utils.listen('click', dialog, userInfoClose)
+Utils.listen('click', user, userInfoOpen);
+Utils.listen('click', dialog, userInfoClose);
+Utils.listen('change', image, imageName);
+Utils.listen('click', post, makePost);
