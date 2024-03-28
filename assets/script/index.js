@@ -35,7 +35,7 @@ function newDate() {
   return now.toString().substring(0, 15);
 }
 
-function imageUrl(file) {
+function imageUrl(file) { //got help from chatGPT
   const imageUrl = URL.createObjectURL(file);
   return imageUrl;
 }
@@ -135,7 +135,7 @@ function makePost() {
   }
 
   if (fileName.innerText !== '') {
-    const file = imageInput.files[0];
+    const file = imageInput.files[0]; //got help from chatGPT
     const url = imageUrl(file);
     postContent += `<img class="post-image" src="${url}" alt="uploaded image">`;
   }
