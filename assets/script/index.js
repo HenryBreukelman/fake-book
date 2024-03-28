@@ -126,7 +126,7 @@ function makePost() {
         <p>${newSubscriber.userName}</p>
       </div>
       <div>
-        <p>${newDate()}</p>
+        <p class="date">${newDate()}</p>
       </div>
     </div>`;
 

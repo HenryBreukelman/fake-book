@@ -190,17 +190,22 @@ textarea {
   border-radius: 5px;
 }
 
+.post-header {
+  width: 100%;
+}
+
 .post-text {
-  margin: 10px 0;
+  margin-top: 10px;
 }
 
 .post-image {
+  margin-top: 10px;
   border-radius: 5px;
   width: 100%;
 }
 
-.post-header {
-  width: 100%;
+.date {
+  color: #3E9CF6;
 }
 
 .author {
