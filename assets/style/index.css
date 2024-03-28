@@ -174,3 +174,39 @@ textarea {
   color: #3E9CF6;
   background-color: #fff;
 }
+
+/* posts */
+
+.posts {
+  width: 600px;
+  padding: 10px;
+  color: #fff;
+}
+
+.posts > div {
+  margin-top: 10px;
+  background-color: rgba(255 255 255 / 0.05);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.post-text {
+  margin: 10px 0;
+}
+
+.post-image {
+  border-radius: 5px;
+  width: 100%;
+}
+
+.post-header {
+  width: 100%;
+}
+
+.author {
+    align-items: center;
+}
+
+.author i {
+  margin-right: 10px;
+}

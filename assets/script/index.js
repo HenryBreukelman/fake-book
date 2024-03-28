@@ -10,8 +10,7 @@ const image = Utils.select('.image');
 const fileName = Utils.select('.file-name');
 const post = Utils.select('.post');
 const postContainer = Utils.select('.posts');
-
-
+const imageInput = Utils.select('.image-input');
 
 let pagesArray = ['Me', 'Minecraft', 'Coding', 'Canada', 'Comedy'];
 
@@ -121,24 +120,24 @@ function checkPost() {
 function makePost() {
   let newPost = document.createElement('div');
   let postContent = `
-  <div class="new-post-header flex space-between">
-    <div class="post-author flex gap-1">
-      <i class="fa-solid fa-user"></i>
-      <p>${newSubscriber.userName}</p>
-    </div>
-    <div>
-      <p>${newDate()}</p>
-    </div>
-  </div>`;
+    <div class="post-header flex spacebetween">
+      <div class="author flex">
+        <i class="fa-solid fa-user"></i>
+        <p>${newSubscriber.userName}</p>
+      </div>
+      <div>
+        <p>${newDate()}</p>
+      </div>
+    </div>`;
 
   if (text.value !== '') {
-    postContent += `<p class="message-post">${text.value}</p>`;
+    postContent += `<p class="post-text">${text.value}</p>`;
   }
 
   if (fileName.innerText !== '') {
-    const file = image.files[0];
+    const file = imageInput.files[0];
     const url = imageUrl(file);
-    postContent += `<img class="image-post" src="${url}" alt="uploaded image">`;
+    postContent += `<img class="post-image" src="${url}" alt="uploaded image">`;
   }
 
   newPost.innerHTML = postContent;
