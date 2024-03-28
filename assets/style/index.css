@@ -179,7 +179,6 @@ textarea {
 
 .posts {
   width: 600px;
-  padding: 10px;
   color: #fff;
 }
 
@@ -214,4 +213,5 @@ textarea {
 
 .author i {
   margin-right: 10px;
+  font-size: 18px;
 }
