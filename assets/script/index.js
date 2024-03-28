@@ -53,42 +53,33 @@ function dialogInfo() {
   } else {
     userMonetize = 'Yes';
   }
-  return {
-    name,
-    username,
-    email,
-    userPages,
-    userGroups,
-    userMonetize
-  };
+  return { name, username, email, userPages, userGroups, userMonetize };
 }
 
 function setDialog() {
   let { name, username, email, userPages, userGroups, userMonetize } = dialogInfo();
   const nameDiv = document.createElement('div');
   nameDiv.textContent = `Name: ${name}`;
+  dialog.appendChild(nameDiv);
 
   const usernameDiv = document.createElement('div');
   usernameDiv.textContent = `Username: ${username}`;
+  dialog.appendChild(usernameDiv);
 
   const emailDiv = document.createElement('div');
   emailDiv.textContent = `Email: ${email}`;
+  dialog.appendChild(emailDiv);
 
   const pagesDiv = document.createElement('div');
   pagesDiv.textContent = `Pages: ${userPages}`;
+  dialog.appendChild(pagesDiv);
 
   const groupsDiv = document.createElement('div');
   groupsDiv.textContent = `Groups: ${userGroups}`;
+  dialog.appendChild(groupsDiv);
 
   const monetizeDiv = document.createElement('div');
   monetizeDiv.textContent = `Monetized: ${userMonetize}`;
-
-  // Append each div element to the dialog box
-  dialog.appendChild(nameDiv);
-  dialog.appendChild(usernameDiv);
-  dialog.appendChild(emailDiv);
-  dialog.appendChild(pagesDiv);
-  dialog.appendChild(groupsDiv);
   dialog.appendChild(monetizeDiv);
 }
 
