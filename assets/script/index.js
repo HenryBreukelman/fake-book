@@ -9,8 +9,9 @@ const text = Utils.select('textarea');
 const image = Utils.select('.image');
 const fileName = Utils.select('.file-name');
 const post = Utils.select('.post');
+const postContainer = Utils.select('.posts');
 
-let posts = []
+
 
 let pagesArray = ['Me', 'Minecraft', 'Coding', 'Canada', 'Comedy'];
 
@@ -29,6 +30,16 @@ const newSubscriber = new Subscriber (
 /*
   functions
 */
+
+function newDate() {
+  const now = new Date();
+  return now.toString().substring(0, 15);
+}
+
+function imageUrl(file) {
+  const imageUrl = URL.createObjectURL(file);
+  return imageUrl;
+}
 
 //dialog
 
@@ -95,23 +106,47 @@ function imageName(event) {
 
 //new post
 
-function makePost() {
-  let newPost = document.createElement('div');
+function checkPost() {
   let newText = text.value.trim();
   let newFileName = fileName.innerText.trim();
 
   if (newText === '' && newFileName === '') {
-    console.log('enasdgf')
+    
   } else {
+    makePost()
     clearInput()
   }
 }
 
-function clearInput() {
-  text.value = 
-  image
-  fileName
+function makePost() {
+  let newPost = document.createElement('div');
+  let postContent = `
+  <div class="new-post-header flex space-between">
+    <div class="post-author flex gap-1">
+      <i class="fa-solid fa-user"></i>
+      <p>${newSubscriber.userName}</p>
+    </div>
+    <div>
+      <p>${newDate()}</p>
+    </div>
+  </div>`;
 
+  if (text.value !== '') {
+    postContent += `<p class="message-post">${text.value}</p>`;
+  }
+
+  if (fileName.innerText !== '') {
+    const file = image.files[0];
+    const url = imageUrl(file);
+    postContent += `<img class="image-post" src="${url}" alt="uploaded image">`;
+  }
+
+  newPost.innerHTML = postContent;
+
+  postContainer.prepend(newPost);
+}
+
+function clearInput() {
   text.value = '';
   image.value = '';
   fileName.innerText = '';
@@ -124,4 +159,4 @@ function clearInput() {
 Utils.listen('click', user, userInfoOpen);
 Utils.listen('click', dialog, userInfoClose);
 Utils.listen('change', image, imageName);
-Utils.listen('click', post, makePost);
+Utils.listen('click', post, checkPost);
